@@ -93,7 +93,6 @@ class Predictor:
             for name in database_names:
                 name = name[0]
                 record = session.query(Face).filter_by(name=name).first()
-                print(record)
                 serialized_feature1 = record.feature
                 feature1 = pickle.loads(serialized_feature1)
                 prob = np.dot(feature, feature1) / (np.linalg.norm(feature) * np.linalg.norm(feature1))

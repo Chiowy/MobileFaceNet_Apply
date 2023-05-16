@@ -7,3 +7,4 @@
 face_db
 *.db
 __pycache__
+test.py

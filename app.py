@@ -60,9 +60,7 @@ def index():
         img = cv2.imread(upload_path)
 
         predictor = Predictor(face_db_path=face_db_path, mobilefacenet_path=mobilefacenet_model_path, mtcnn_path=mtcnn_model_path,threshold=threshold)
-        print("finished")
         boxes, names = predictor.recognition(img)
-        print("2")
         predictor.draw_face(img, boxes, names)
     
         return render_template('upload_ok.html', userinput=names)
